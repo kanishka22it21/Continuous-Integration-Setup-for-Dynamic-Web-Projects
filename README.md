@@ -8,12 +8,6 @@ A simple To-Do List web application built with HTML, CSS, and JavaScript. Tasks 
 - Tasks are saved in the browser's `localStorage`.
 - Responsive design.
 
-## Folder Structure
--todolist-index.html
-         -styles.css
-         -app.js
-
-
 ## Getting Started
 
 ### Prerequisites
