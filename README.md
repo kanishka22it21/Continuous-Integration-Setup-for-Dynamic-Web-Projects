@@ -10,6 +10,7 @@ A simple To-Do List web application built with HTML, CSS, and JavaScript. Tasks 
 
 ## Folder Structure
 todo-list/ 
+
    -index.html # Main HTML file 
    - styles.css # CSS styles
    - app.js # JavaScript
