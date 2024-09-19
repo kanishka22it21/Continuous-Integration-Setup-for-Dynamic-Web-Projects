@@ -9,7 +9,7 @@ A simple To-Do List web application built with HTML, CSS, and JavaScript. Tasks 
 - Responsive design.
 
 ## Folder Structure
-todo-list/ 
+   todo-list/ 
 
    -index.html # Main HTML file 
    -styles.css # CSS styles
