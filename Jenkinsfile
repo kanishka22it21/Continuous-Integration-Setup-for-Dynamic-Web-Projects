@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools{
+        maven 'Maven-3.9.9'
+    }
 
     environment {
         MAVEN_HOME = '/opt/maven'  // Path to Maven installation (adjust for your system)
