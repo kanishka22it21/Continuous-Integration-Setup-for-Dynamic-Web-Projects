@@ -31,10 +31,13 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                // Deploy the project (you can add your deployment commands here)
-                echo 'Deploying the application'
+                sh '''
+                echo "Starting the application..."
+                nohup java -jar target/*.jar &
+                '''
             }
         }
+
     }
 
     post {
