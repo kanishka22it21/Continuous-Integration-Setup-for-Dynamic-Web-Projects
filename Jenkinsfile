@@ -11,7 +11,6 @@ pipeline {
             steps {
                 // Checkout the code from the Git repository
                 git branch: 'main', url: 'https://github.com/kanishka22it21/TO-DO-LIST-APPLICATION.git'
-
             }
         }
 
@@ -32,8 +31,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                echo "Starting the application..."
-                nohup java -jar target/*.jar &
+                echo "Starting the application on port 8081..."
+                nohup java -jar target/*.jar --server.port=8081 > app.log 2>&1 &
                 '''
             }
         }
