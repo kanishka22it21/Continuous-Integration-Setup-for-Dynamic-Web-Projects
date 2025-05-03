@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    tools{
-        maven 'Maven-3.9.9'
-    }
 
     environment {
         MAVEN_HOME = '/opt/maven'  // Path to Maven installation (adjust for your system)
@@ -13,14 +10,14 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from the Git repository
-                git branch: 'main', url: 'https://github.com/kanishka22it21/TO-DO-LIST-APPLICATION.git'
+                git 'https://github.com/your-username/your-repo.git'
             }
         }
 
         stage('Build') {
             steps {
                 // Compile the project using Maven (this will use the pom.xml file)
-                sh 'mvn clean package'
+                sh 'mvn clean install'
             }
         }
 
@@ -33,13 +30,10 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh '''
-                echo "Starting the application on port 8081..."
-                nohup java -jar target/*.jar --server.port=8081 > app.log 2>&1 &
-                '''
+                // Deploy the project (you can add your deployment commands here)
+                echo 'Deploying the application'
             }
         }
-
     }
 
     post {
