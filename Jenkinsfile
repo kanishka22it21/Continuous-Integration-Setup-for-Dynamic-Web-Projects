@@ -10,28 +10,35 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from the Git repository
-               git branch: 'main', url: 'https://github.com/kanishka22it21/TO-DO-LIST-APPLICATION.git'
+                git branch: 'main', url: 'https://github.com/kanishka22it21/TO-DO-LIST-APPLICATION.git'
             }
         }
 
         stage('Build') {
             steps {
-                // Compile the project using Maven (this will use the pom.xml file)
-                sh 'mvn clean install'
+                script {
+                    try {
+                        // Compile the project using Maven (this will use the pom.xml file)
+                        sh 'mvn clean install'
+                    } catch (Exception e) {
+                        currentBuild.result = 'FAILURE'
+                        throw e
+                    }
+                }
             }
         }
 
         stage('Test') {
             steps {
-                // Run unit tests using Maven (this will look for test cases defined in your project)
-                sh 'mvn test'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                // Deploy the project (you can add your deployment commands here)
-                echo 'Deploying the application'
+                script {
+                    try {
+                        // Run unit tests using Maven (this will look for test cases defined in your project)
+                        sh 'mvn test'
+                    } catch (Exception e) {
+                        currentBuild.result = 'FAILURE'
+                        throw e
+                    }
+                }
             }
         }
     }
