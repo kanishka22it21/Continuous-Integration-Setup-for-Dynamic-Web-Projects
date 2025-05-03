@@ -1,61 +1,43 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.todo</groupId>
-    <artifactId>todo-app</artifactId>
+    <groupId>com.example</groupId>
+    <artifactId>my-web-app</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>war</packaging> <!-- Use 'war' for a web application -->
+    <packaging>war</packaging>
 
-    <!-- Maven Compiler Plugin to specify Java version -->
+    <name>My Web App</name>
+
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <!-- Dependencies section -->
     <dependencies>
-        <!-- Add any dependencies you need here -->
-        <!-- Example: JUnit for unit testing -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.1</version>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- Servlet API (if you are using servlets) -->
+        <!-- Example Servlet API dependency -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>4.0.1</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- Add other dependencies here -->
     </dependencies>
 
-    <!-- Build section to define plugins -->
     <build>
+        <finalName>my-web-app</finalName>
         <plugins>
-            <!-- Plugin for compiling the project -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-
-            <!-- Plugin for creating a WAR file (if it's a web project) -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.3.1</version>
                 <configuration>
-                    <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
         </plugins>
