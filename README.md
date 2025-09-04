@@ -115,11 +115,12 @@ Restart Jenkins after installing plugins.
 
 If your project uses **Maven**, Jenkins will run builds as defined in your `pom.xml`.  
 
-To build locally:  
-```bash
-mvn clean install
+- To build locally:  
+- ```bash
+- mvn clean install
 
-mvn test
+- To test:
+- mvn test
 
 
 
