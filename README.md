@@ -130,7 +130,12 @@ mvn test
 - **localStorage**: For saving tasks between sessions.
 - **Maven**:Build Management Tool
 - **Jenkins**:Continuous Integration automation
-<img width="1339" height="542" alt="image" src="https://github.com/user-attachments/assets/67c971e5-cc39-4e0a-a2b5-d88d14ec16ea" />
+
+## Output:
+
+<img width="1361" height="611" alt="image" src="https://github.com/user-attachments/assets/bb078758-7178-4c54-880b-7b88017bf582" />
+
+  
 
 
 
