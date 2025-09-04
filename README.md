@@ -116,11 +116,10 @@ Restart Jenkins after installing plugins.
 If your project uses **Maven**, Jenkins will run builds as defined in your `pom.xml`.  
 
 - To build locally:  
-- ```bash
-- mvn clean install
+mvn clean install
 
 - To test:
-- mvn test
+mvn test
 
 
 
@@ -129,6 +128,8 @@ If your project uses **Maven**, Jenkins will run builds as defined in your `pom.
 - **CSS**: For styling the user interface.
 - **JavaScript**: For dynamic interaction, handling form submissions, and managing tasks.
 - **localStorage**: For saving tasks between sessions.
+- **Maven**:Build Management Tool
+- **Jenkins**:Continuous Integration automation
 
 
 
